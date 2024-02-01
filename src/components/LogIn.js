@@ -3,7 +3,8 @@ import {useNavigate} from 'react-router-dom'
 
 // - React Forms: https://reactjs.org/docs/forms.html
 
-function SignUp() {
+function LogIn({isLoggedIn,setIsLoggedIn}) {
+
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
     username: "",
@@ -16,7 +17,9 @@ function SignUp() {
   function handleSubmit(event) {
     event.preventDefault();
     console.log(formData);
-    navigate('/')
+    setIsLoggedIn(true);
+    console.log(isLoggedIn);
+    navigate('/');
   }
   
   function handleChange(event) {
@@ -34,7 +37,7 @@ function SignUp() {
   return (
     <div>
     <form onSubmit={handleSubmit}>
-      <h1>Create an Account</h1>
+      <h1>Login</h1>
       <label htmlFor="username">Username</label>
       <input
         type="text"
@@ -51,44 +54,13 @@ function SignUp() {
         onChange={handleChange}
       />
 
-      <label htmlFor="avatar">Avatar Image</label>
-      <input
-        type="text"
-        id="avatar"
-        value={formData.avatar}
-        onChange={handleChange}
-      />
-      <img
-        src={formData.avatar || "https://www.kindpng.com/picc/m/78-785827_user-profile-avatar-login-account-male-user-icon.png"}
-        alt="Avatar preview"
-      />
 
-      <label htmlFor="type">Account Type</label>
-      <select
-        id="accountType"
-        value={formData.accountType}
-        onChange={handleChange}
-      >
-        <option value="free">Free</option>
-        <option value="normal">Normal</option>
-        <option value="pro">Pro</option>
-      </select>
 
-      <label>
-        Get Our Newsletter!
-        <input
-          type="checkbox"
-          id="newsletter"
-          checked={formData.newsletter}
-          onChange={handleChange}
-        />
-      </label>
-
-      <input type="submit" value="Sign Up" />
+      <input type="submit" value="Log In" />
     </form>
     </div>
     
   );
 }
 
-export default SignUp;
+export default LogIn;

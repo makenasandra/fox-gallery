@@ -16,6 +16,7 @@ code {
 .header-container {
   text-align: center;
   padding: 0px; /* Add padding for better visual appearance */
+  flex-direction: row;
 } 
 
 
@@ -24,16 +25,13 @@ code {
 }
 
 /* Home.css */
-.home-container {
+.home-section {
+  text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 100vh; /* Adjust the height as needed */
-}
-
-.home-section {
-  text-align: center;
 }
 
 .fox-image {
