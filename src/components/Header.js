@@ -10,7 +10,7 @@ function Header({isLoggedIn,setIsLoggedIn}) {
           id: 1,
           username: "Ian"
         })
-        navigate('/login')
+        navigate('/login');
       }
       
       function handleLogoutClick() {
@@ -22,9 +22,9 @@ function Header({isLoggedIn,setIsLoggedIn}) {
         <h1 className="header-text">🦊 Fox Gallery 🦊</h1>
         <nav>
         {isLoggedIn ? (
-          <button onClick={handleLogoutClick}>Logout</button>
+          <button className='header-button' onClick={handleLogoutClick}>Logout</button>
         ) : (
-          <button onClick={handleLoginClick}>Login</button>
+          <button className='header-button' onClick={handleLoginClick}>Login</button>
         )}
       </nav>
       </div>

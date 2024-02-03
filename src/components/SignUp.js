@@ -6,8 +6,8 @@ import {useNavigate} from 'react-router-dom'
 function SignUp() {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
-    username: "",
-    password: "",
+    username: "user",
+    password: "@123456789",
     avatar: "",
     accountType: "pro",
     newsletter: true
@@ -16,7 +16,9 @@ function SignUp() {
   function handleSubmit(event) {
     event.preventDefault();
     console.log(formData);
-    navigate('/')
+    localStorage.setItem("username", formData.username);
+    localStorage.setItem("password", formData.password);
+    navigate('/login')
   }
   
   function handleChange(event) {

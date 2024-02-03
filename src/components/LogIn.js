@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import {useNavigate} from 'react-router-dom'
+import {Link, useNavigate} from 'react-router-dom'
 
 // - React Forms: https://reactjs.org/docs/forms.html
 
@@ -16,10 +16,19 @@ function LogIn({isLoggedIn,setIsLoggedIn}) {
 
   function handleSubmit(event) {
     event.preventDefault();
-    console.log(formData);
-    setIsLoggedIn(true);
-    console.log(isLoggedIn);
-    navigate('/');
+    // console.log(formData);
+    const username = localStorage.getItem("username");
+    const password = localStorage.getItem("password");
+    console.log({username, password})
+    if(username === formData.username && password === formData.password){
+        setIsLoggedIn(true);
+        console.log("isLoggedIn:" + isLoggedIn);
+        navigate('/');
+    } else {
+        navigate("/login")
+    }
+    
+   
   }
   
   function handleChange(event) {
@@ -32,11 +41,11 @@ function LogIn({isLoggedIn,setIsLoggedIn}) {
     })
   }
   
-  console.log(formData)
+//   console.log(formData)
 
   return (
-    <div>
-    <form onSubmit={handleSubmit}>
+    <div className='login-section'>
+    <form className="login-form" onSubmit={handleSubmit}>
       <h1>Login</h1>
       <label htmlFor="username">Username</label>
       <input
@@ -57,6 +66,9 @@ function LogIn({isLoggedIn,setIsLoggedIn}) {
 
 
       <input type="submit" value="Log In" />
+      <div className='register-text'>
+      <Link to='/signup'>Don't Have An account? Sign Up</Link>
+      </div>
     </form>
     </div>
     

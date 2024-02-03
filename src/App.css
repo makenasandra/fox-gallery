@@ -37,6 +37,114 @@
   }
 }
 
+/* Header.css */
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #f0f0f0; /* Optional: Add a background color for better visibility */
+}
+
+.header-text {
+  margin: 0;
+  font-size: 20px;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+}
+
+.header-button{
+  margin-left: auto; /* Push the button to the right */
+  font-size: 20px;
+  padding: 8px;
+  cursor: pointer;
+}
+
+
+
+.header-text {
+  font-size: 56px; /* Adjust the font size as needed */
+}
+
+/* Home.css */
+.home-section {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; /* Adjust the height as needed */
+}
+
+.fox-image {
+  max-width: 100%; /* Make sure the image doesn't exceed its container */
+  margin: 0 auto; /* Center the image horizontally */
+}
+
+.fox-image-buttons {
+  margin-top: 20px; /* Add spacing between image and buttons */
+  padding: 10px;
+  font-size: 20px;
+  margin: 10px;
+  
+} 
+
+/* LogIn.css */
+
+.login-section {
+  background-color: #f8f8f8; /* Optional: Add a light background color for the whole page */
+}
+
+.login-form {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #ff8c00; /* Orange background color */
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.login-form h1 {
+  text-align: center;
+  color: #fff; /* White text color */
+}
+
+.login-form label {
+  display: block;
+  margin-bottom: 8px;
+  color: #fff; /* White text color */
+}
+
+.login-form input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 16px;
+  border: 1px solid #fff; /* White border */
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.login-form input[type="submit"] {
+  background-color: #fff; /* White background color */
+  color: #ff8c00; /* Orange text color */
+  cursor: pointer;
+}
+
+.login-form input[type="submit"]:hover {
+  background-color: #ffcc80; /* Lighter orange background color on hover */
+}
+.register-text{
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* You can add more styles as needed */
+
+
+
 
 
 
